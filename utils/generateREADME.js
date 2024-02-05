@@ -1,8 +1,22 @@
-// import fs from "fs";
+function generateLicenseBadge(license) {
+  const badges = {
+    MIT: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+    Apache:
+      "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)",
+    Boost:
+      "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)",
+    BSD2: "[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)",
+    BSD3: "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)",
+  };
+
+  return badges[license] || "";
+}
 
 function generateREADME(data) {
+  const licenseBadge = generateLicenseBadge(data.license);
   const readmeContent = `
   # ${data.title}
+  ${licenseBadge}
   
   ## Description
   ${data.description || "No description provided."}
@@ -42,5 +56,4 @@ function generateREADME(data) {
   return readmeContent;
 }
 
-// module.exports = generateREADME;
 export default generateREADME;

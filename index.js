@@ -1,21 +1,10 @@
-// const inquirer = require("inquirer");
-// import inquirer from "inquirer"; // was
-// const generateREADME = require("./utils/generateREADME");
-// import generateREADME from './utils/generateREADME';
-// import generateREADME from "./utils/generateREADME.js"; // was
-
-//Including packages needed for this application
-// const fs = require("fs");
-// const inquirer = require("inquirer");
-// const path = require("path");
-// const generateREADME = require("./utils/generateREADME");
-
-// new
+// Including packages needed for this application
 import inquirer from "inquirer";
 import fs from "fs";
 import path from "path";
 import generateREADME from "./utils/generateREADME.js";
 
+// Questions array
 const questions = [
   {
     type: "input",
@@ -41,15 +30,7 @@ const questions = [
     type: "checkbox",
     name: "license",
     message: "What kind of license should your project have?",
-    choices: [
-      "MIT",
-      "APACHE 2.0",
-      "Boost1.0",
-      "MPL2.0",
-      "BSD2",
-      "BSD3",
-      "none",
-    ],
+    choices: ["MIT", "APACHE 2.0", "Boost1.0", "BSD2", "BSD3"],
   },
   {
     type: "input",
@@ -82,41 +63,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions).then((responses) => {
     console.log("Creating Professional README.md File...");
-    writeToFile("./dist/README.md", generateREADME({ ...responses }));
+    writeToFile("./sample/README.md", generateREADME({ ...responses }));
   });
 }
 init();
-
-// was
-// inquirer
-//   .prompt(questions)
-//   .then((answers) => {
-//     const readmeContent = generateREADME(answers);
-
-//     const fs = require("fs");
-//     fs.writeFileSync("README.md", readmeContent);
-
-//     console.log("README.md successfully generated!");
-//   })
-//   .catch((error) => {
-//     console.error("Error:", error);
-//   });
-
-// import("inquirer")
-//   .then((inquirer) => {
-//     // Now you can use inquirer.prompt with the predefined questions
-//     inquirer.prompt(questions).then((answers) => {
-//       // Process the answers here
-//       console.log("Answers:", answers);
-
-//       const readmeContent = generateREADME(answers);
-
-//       const fs = require("fs");
-//       fs.writeFileSync("README.md", readmeContent);
-
-//       console.log("README.md successfully generated!");
-//     });
-//   })
-//   .catch((error) => {
-//     console.error("Error:", error);
-//   });
