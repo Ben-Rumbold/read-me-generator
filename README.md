@@ -1,15 +1,23 @@
 # README Generator
 
+## Link to functionality video
+
+https://drive.google.com/file/d/1-bk4fygXDpj0AegAiPHxR-sZrClnTom9/view
+
 ## Description
 
 A command-line application that dynamically generates a professional README.md file from a user's input
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Badges](#badges)
+- [Features](#features)
+- [Contribute](#contribute)
+- [Tests](#tests)
 
 ## Installation
 
@@ -59,7 +67,7 @@ SOFTWARE.
 
 N/A
 
-## How to Contribute
+## Contribute
 
 https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md
 
